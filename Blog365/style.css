@@ -1,0 +1,44 @@
+body{
+    background-color:#8d99ae;
+}
+
+#leftside{
+    width:10%;
+    float:left;
+
+}
+#mainbody{
+    
+    float:left;
+    width:80%;
+    height:100%;
+    background-color:#edf2f4;
+    text-align:center;
+    border-radius: 8px;
+}
+#leftside li{
+    border:black 2px solid;
+    border-radius:3px;
+    padding:none;
+    margin:1em;
+    font-size:16pt;
+}
+#mainbody img{
+    float:right;
+    margin:5em;
+    max-width:600px;
+    max-height:500px;
+}
+#summary{
+    font-size:14pt;
+    letter-spacing: .2rem;
+    margin-top:5em;
+}
+.pagetitle{
+    font-size: 32pt;
+    letter-spacing: .1rem;
+}
+
+a:visited{
+    color:#89676b;
+}
