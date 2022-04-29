@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <Title>HayStackOverflow Log In</Title>
+    <link rel="icon" type="images/coffee.jpg" href="images/favicon.ico">
+    
+    <div id="leftside">
+        <ul>
+            <a href="index.html">
+                <li>Home</li>
+            </a>
+            <a href="blog.php">
+                <li>Blog</li>
+            </a>
+            <a href="aboutus.html">
+                <li>About</li>
+            </a>
+            <a href="login.php">
+                <li>Log In</li>
+            </a>
+            <a href="registration.html">
+                <li>Register</li>
+            </a>
+            <a href="newBlogPost.php">
+                <li>New Post</li>
+            </a>
+        </ul>
+    </div>
+</head>
+
+<body>
+    <div class="login">
+        <h1>Login</h1>
+        <form action="authenticate.php" method="post">
+            <label for="username">
+					<i class="fas fa-user"></i>
+				</label>
+            <input type="text" name="username" placeholder="Username" id="username" required>
+            <label for="password">
+					<i class="fas fa-lock"></i>
+				</label>
+            <input type="password" name="password" placeholder="Password" id="password" required>
+            <input type="submit" value="Login">
+        </form>
+    </div>
+</body>
+
+</html>
+

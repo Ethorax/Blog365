@@ -33,6 +33,7 @@ body{
     font-size:14pt;
     letter-spacing: .2rem;
     margin-top:5em;
+    margin-left:4.5em;
 }
 .pagetitle{
     font-size: 32pt;
@@ -41,4 +42,22 @@ body{
 
 a:visited{
     color:#89676b;
+}
+.button{
+    background-color:#edf2f4;
+
+}
+#franklin{
+    float:left;
+    width:48%;
+    text-align:center;
+}
+#ethan{
+    float:left;
+    width:48%;
+    text-align:center;
+}
+.button:hover{
+    background-color:#89676b;
+    color:#edf2f4;
 }
