@@ -4,7 +4,7 @@
 <head>
 
     <link rel="stylesheet" href="style.css" type="text/css">
-    <Title>HayStackOverflow Log In</Title>
+    <Title>Log In</Title>
     <link rel="icon" href="images/coffee.jpg">
 
     <div id="leftside">
@@ -27,15 +27,16 @@
             <a href="newBlogPost.php">
                 <li class="button">New Post</li>
             </a>
+            <a href="logout.php"><li class="button">Logout</li></a>
         </ul>
     </div>
 
 <body>
-    <div id="main">
-		<h1>SIMPLE LOGIN</h1>
+    <div id="mainbody">
+		<h1 id="postheader">LOGIN</h1>
 		<form method="POST" action="authenticate.php">
-			Username <input type="text" name="username" class="text" autocomplete="off" required>
-			Password <input type="password" name="password" class="text" required>
+			<input type="text" placeholder="Username" name="username" class="text" autocomplete="off" required><br/><br/>
+			<input type="password" placeholder="Password" name="password" class="text" required><br/><br/>
 			<input type="Submit" name="submit" id="sub">
 		</form>
 	</div>

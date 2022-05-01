@@ -15,11 +15,11 @@ if (mysqli_connect_errno()) {
 	exit('Failed to connect to MySQL: ' . mysqli_connect_error());
 }
 // We don't have the password or email info stored in sessions so instead we can get the results from the database.
-$stmt = $con->prepare('SELECT password, email FROM accounts WHERE id = ?');
+$stmt = $con->prepare('SELECT password, email, level FROM accounts WHERE id = ?');
 // In this case we can use the account ID to get the account info.
 $stmt->bind_param('i', $_SESSION['id']);
 $stmt->execute();
-$stmt->bind_result($password, $email);
+$stmt->bind_result($password, $email,$level);
 $stmt->fetch();
 $stmt->close();
 ?>
@@ -52,6 +52,9 @@ $stmt->close();
             <a href="newBlogPost.php">
                 <li class="button">New Post</li>
             </a>
+            <a href="logout.php">
+                <li class="button">Logout</li>
+            </a>
         </ul>
     </div>
 	</head>
@@ -60,6 +63,7 @@ $stmt->close();
 		<div id="profile-body">
 	<h2>Username: <?=$_SESSION['name']?></h2>
 	<h2>Email: <?=$email?> 
+    <h2>User Access Level: <?=$_SESSION['level']?></h2>
 	<a href="logout.php"></br></br><i class="fas fa-sign-out-alt"></i>Logout</a>
 </div>
 	</body>

@@ -22,7 +22,8 @@ if ( mysqli_connect_errno() ) {
 <?php
       $title = $_POST['title'];
       $body = $_POST['body'];
-      $username = $_SESSION['name']
+      $username = $_SESSION['name'];
+      $level = $_SESSION['level'];
     ?>
 
         <?php

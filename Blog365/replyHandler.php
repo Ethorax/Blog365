@@ -1,7 +1,7 @@
 <?php
     session_start();
     if (!isset($_SESSION['loggedin'])) {
-        header('Location: login.php');
+        header('Location: Login.html');
         exit;
     }
 
@@ -20,16 +20,13 @@ if ( mysqli_connect_errno() ) {
 
 <!DOCTYPE html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="images/coffee.jpg">
 
-</head>
-
-<body>
-
-<div id="leftside">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <Title>Blog365</Title>
+    <div id="leftside">
         <ul>
             <a href="index.html">
                 <li class="button">Home</li>
@@ -49,54 +46,27 @@ if ( mysqli_connect_errno() ) {
             <a href="newBlogPost.php">
                 <li class="button">New Post</li>
             </a>
-            <a href="logout.php">
-                <li class="button">Logout</li>
-            </a>
         </ul>
     </div>
-    <div id="mainbody">
-        <h1 class="pagetitle">Blog</h1>
-        <img src="">
-    
-
-    <?php
-    $sql = mysqli_query($con, "SELECT * FROM blog_posts");
-    if(mysqli_num_rows($sql) > 0){
-?>
-
-<table>
-    <tr>
-        <td>User</td>
-        <td>Title</td>
-        <td>Post ID</td>
-        <td>Body</td>
-    </tr>
+</head>
 
 <?php
-$i=0;
-while($row = mysqli_fetch_array($sql)){
-    $postID = $row["id"];
-
+      $body = $_POST['body'];
+      $username = $_SESSION['name'];
+      $postID = $_GET['postID']
     ?>
+        <?php
+        $sql = "INSERT INTO `blog_comments` (`id`, `username`, `body`, `postID`) VALUES ('0', '$username', '$body', '$postID')";
 
-    <tr>
-        <td><?php echo $row["username"]; ?></td>
-        <td><a href="replytopost.php?postID=<?php echo $postID?>"><?php echo $row["title"]; ?></td>
-        <td><?php echo $row["id"]; ?></td>
-        <td><?php echo $row["body"] ?></td>
-    </tr>
-    <?php
-    $i++;
-}
-?>
-</table>
-    <?php
-}
-else{
-    echo "No Posts Available";
-}
-?>
-</div>
-</body>
+        if ($con->query($sql) === TRUE) {
+            echo "New record created successfully";
+          } else {
+            echo "Error: " . $sql . "<br>" . $con->error;
+          }
+          
+          $con->close();
+          header('Location: replytopost.php?postID='.$postID);
+        ?>
 
-</html>
+        </html>
+

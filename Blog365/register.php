@@ -26,6 +26,9 @@
             <a href="newBlogPost.php">
                 <li class="button">New Post</li>
             </a>
+            <a href="logout.php">
+                <li class="button">Logout</li>
+            </a>
         </ul>
     </div>
 </body>
